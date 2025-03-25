@@ -27,7 +27,7 @@ func GetConfig() Configuration {
 	}
 
 	return Configuration{
-		Port:                 getEnv("PORT", "8000"),
+		Port:                 getEnv("PORT", "8001"),
 		DbHost:               getEnv("DB_HOST", "localhost"),
 		DbPort:               getEnv("DB_PORT", "5432"),
 		DbName:               getEnv("DB_NAME", "book_finder_db"),

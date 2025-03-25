@@ -22,6 +22,10 @@ func main() {
 	e.Use(middleware.Recover())
 	e = route.InitHttp()
 
+	// Get port from config
+	cfg := config.GetConfig()
+	port := ":" + cfg.Port
+
 	// Start server
-	e.Logger.Fatal(e.Start(":8000"))
+	e.Logger.Fatal(e.Start(port))
 }

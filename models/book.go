@@ -1,20 +1,19 @@
 package models
 
-import "time"
+import (
+	"mime/multipart"
+	"time"
+)
 
 type Books struct {
-	ID          int64     `gorm:"column:id;primaryKey;autoIncrement"`
-	Title       string    `gorm:"column:title;not null"`
-	Thumbnail   string    `gorm:"column:thumbnail"`
-	WritterName string    `gorm:"column:writter_name"`
-	Description string    `gorm:"column:description"`
-	Category    string    `gorm:"column:category"`
-	CreatedAt   time.Time `gorm:"column:created_at"`
-	UpdatedAt   time.Time `gorm:"column:updated_at"`
-}
-
-func (Books) TableName() string {
-	return "books"
+	ID          int64     `gorm:"column:id;"`
+	Title       string    `gorm:"title"`
+	Thumbnail   string    `gorm:"thumbnail"`
+	WritterName string    `gorm:"writter_name"`
+	Description string    `gorm:"description"`
+	Category    string    `gorm:"category"`
+	CreatedAt   time.Time `gorm:"created_at"`
+	UpdatedAt   time.Time `gorm:"updated_at"`
 }
 
 type BookReqs struct {
